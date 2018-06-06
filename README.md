@@ -47,5 +47,18 @@ Figure 2. CIFAR-100 Test Accuracy of the Mean Teacher Model with SWA and fastSWA
 
 We provide scripts for ResNet-26 with Shake-Shake regularization for CIFAR-10 and CIFAR-100, as well as other label settings in the directory **experiments**.
 
+## fastSWA and SWA Implementation
+fastSWA can be incorporated into training very conveniently with just a few lines of code. First, we initialize a replicate model (can be set to require no gradients to save memory) and initialize the weight averaging optimization object.
+
+```
+fastswa_net = create_model(no_grad=True)
+fastswa_net_optim = optim_weight_swa.WeightSWA(swa_model)
+```
+Then, the fastSWA model can be updated every *fastswa_freq* epochs. Note that after updating the weights, we need to update Batch Normalization running average variables by passing the training data through the fastSWA model. 
+```
+if epoch >= (args.epochs - args.cycle_interval) and (epoch - args.epochs - args.cycle_interval) % fastswa_freq == 0:
+  fastswa_net_optim.update(fastswa_net)
+  update_batchnorm(fastswa_net, train_loader, train_loader_len)
+```
 
 Note: the code is adapted from https://github.com/CuriousAI/mean-teacher/tree/master/pytorch
