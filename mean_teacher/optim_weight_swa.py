@@ -1,10 +1,10 @@
 class WeightSWA (object):
     """
-    SWA
+    SWA or fastSWA
     """
     def __init__(self, swa_model):
         self.num_params = 0
-        self.swa_model = swa_model # assume that this parameters are to be discarded
+        self.swa_model = swa_model # assume that the parameters are to be discarded at the first update
 
     def update(self, student_model):
         self.num_params += 1
@@ -17,5 +17,6 @@ class WeightSWA (object):
             for swa_p, src_p in zip(self.swa_model.parameters(), student_model.parameters()):
                 swa_p.data.add_(-inv*swa_p.data)
                 swa_p.data.add_(inv*src_p.data)
+    
     def reset(self):
         self.num_params = 0
