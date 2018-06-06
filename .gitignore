@@ -13,6 +13,5 @@ old_figs
 old_figs2
 *.np
 *.pdf
-*.png
 generate_results/0sup
 generate_results/1paper
