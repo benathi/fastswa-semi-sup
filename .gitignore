@@ -5,7 +5,6 @@ data-local/images
 results
 transient
 data
-figs/
 log/
 sftp-config*.json
 figs_debug

@@ -48,7 +48,7 @@ class RunContext:
     def __init__(self, runner_file, run_idx):
         logging.basicConfig(level=logging.INFO, format='%(message)s')
         runner_name = os.path.basename(runner_file).split(".")[0]
-        self.result_dir = "{root}/{runner_name}/{date:%Y-%m-%d_%H:%M:%S}/{run_idx}".format(
+        self.result_dir = "{root}/{runner_name}/{date:%Y-%m-%d_%H-%M-%S}/{run_idx}".format(
             root='results',
             runner_name=runner_name,
             date=datetime.now(),
