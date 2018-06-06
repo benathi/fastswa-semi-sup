@@ -363,8 +363,7 @@ def train(train_loader, train_loader_len, model, ema_model, actual_ema_model, op
         meters.update('lr', optimizer.param_groups[0]['lr'])
 
         input_var = torch.autograd.Variable(input)
-        if args.pimodel:
-          ema_input_var = torch.autograd.Variable(ema_input, volatile=True)
+        ema_input_var = torch.autograd.Variable(ema_input, volatile=True)
         target_var = torch.autograd.Variable(target.cuda(async=True))
 
         minibatch_size = len(target_var)

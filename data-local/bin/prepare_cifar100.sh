@@ -5,8 +5,6 @@ echo "Downloading and unpacking CIFAR-100"
 mkdir -p $DIR/../workdir
 python $DIR/unpack_cifar100.py $DIR/../workdir $DIR/../images/cifar/cifar100/by-image/
 
-# we might not use train or val separately. do this if need be
-
 echo "Linking training set"
 (
     cd $DIR/../images/cifar/cifar100/by-image/
