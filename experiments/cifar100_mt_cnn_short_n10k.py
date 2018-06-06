@@ -50,7 +50,7 @@ def parameters():
     }
 
     for n_labels  in [10000]:
-        for data_seed in [11, 12, 10]:
+        for data_seed in [10, 11, 12]:
             yield {
                 **defaults,
                 'title': '{}-label cifar-100'.format(n_labels),
@@ -62,7 +62,6 @@ def parameters():
 def run(title, base_batch_size, base_labeled_batch_size, base_lr, n_labels, data_seed, **kwargs):
     LOG.info('run title: %s', title)
     ngpu = torch.cuda.device_count()
-    assert ngpu == 1
     adapted_args = {
         'batch_size': base_batch_size * ngpu,
         'labeled_batch_size': base_labeled_batch_size * ngpu,

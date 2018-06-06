@@ -1,12 +1,10 @@
 import sys
 import logging
 import torch
-import sys
-sys.path.append('.')
 import main
 from mean_teacher.cli import parse_dict_args
 from mean_teacher.run_context import RunContext
-import math
+
 LOG = logging.getLogger('runner')
 
 
@@ -14,7 +12,7 @@ def parameters():
     defaults = {
         # Technical details
         'workers': 2,
-        'checkpoint_epochs': 3,
+        'checkpoint_epochs': 20,
 
         # Data
         'dataset': 'cifar10',
@@ -22,11 +20,11 @@ def parameters():
         'eval_subdir': 'test',
 
         # Data sampling
-        'base_batch_size': 100,
-        'base_labeled_batch_size': 50,
+        'base_batch_size': 128,
+        'base_labeled_batch_size': 31,
 
         # Architecture
-        'arch': 'cifar_cnn',
+        'arch': 'cifar_shakeshake26',
         'ema_decay': 0.97,
 
         # Costs
@@ -34,26 +32,27 @@ def parameters():
         'consistency_rampup': 5,
         'consistency': 100.0,
         'logit_distance_cost': .01,
-        'weight_decay': 1e-4,
+        'weight_decay': 2e-4,
 
         # Optimization
-        'epochs': 180,
+        'epochs': 1500,
         'lr_rampup': 0,
-        'base_lr': 0.1,
-        'lr_rampdown_epochs': 210,
+        'base_lr': 0.05,
+        'lr_rampdown_epochs': 1800,
         'nesterov': True,
 
-        'cycle_interval': 30,
+        # BenA: for cycling
+        'num_cycles': 100,
+        'cycle_interval': 200,
         'start_epoch': 0,
-        'fastswa_frequencies': '3',
-        'num_cycles': math.ceil((1200-180)/30),
+        'fastswa_frequencies': '20',
     }
 
-    for n_labels  in [4000]:
-        for data_seed in [10, 11, 12]:
+    for n_labels  in [1000]:
+        for data_seed in [10]:
             yield {
                 **defaults,
-                'resume': "",
+                #'resume': resume,
                 'title': '{}-label cifar-10'.format(n_labels),
                 'n_labels': n_labels,
                 'data_seed': data_seed
