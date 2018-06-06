@@ -1,6 +1,6 @@
-# fastswa-semi-sup
-Improving Consistency-Based Semi-Supervised Learning with Weight Averaging 
+# Improving Consistency-Based Semi-Supervised Learning with Weight Averaging 
 
+## Preparing Packages and Data
 
 The code runs on Python 3 with Pytorch 0.3. The following packages are also required.
 ```
@@ -14,7 +14,8 @@ Then prepare CIFAR-10 and CIFAR-100 with the following commands:
 ./data-local/bin/prepare_cifar100.sh
 ```
 
-We provide training scripts in folder *exps*. To replicate the results for CIFAR-10 using the Mean Teacher model + fast-SWA on 4000 labels with a 13-layer CNN, run the following:
+## Semi-Supervised Learning with fastSWA
+We provide training scripts in folder *exps*. To replicate the results for CIFAR-10 using the Mean Teacher model on 4000 labels with a 13-layer CNN, run the following:
 
 ```
 python experiments/cifar10_mt_cnn_short_n4k.py
@@ -23,6 +24,13 @@ python experiments/cifar10_mt_cnn_short_n4k.py
 Similarly, for CIFAR-100 with 10k labels:
 ```
 python experiments/cifar100_mt_cnn_short_n10k.py
+```
+
+The results are saved to the directories **cifar10_mt_cnn_short_n4k** and **results/cifar100_mt_cnn_short_n10k**. The plot the accuracy versus epoch, run
+
+```
+python read_log.py --pattern results/cifar10_*n4k --cutoff 84 --interval 2 --upper 92
+python read_log.py --pattern results/cifar100_*n10k --cutoff 54 --interval 4 --upper 70
 ```
 
 <p align="center"> 
