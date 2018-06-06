@@ -1,5 +1,18 @@
 # Improving Consistency-Based Semi-Supervised Learning with Weight Averaging 
 
+This repository contains the code for our paper (Improving Consistency-Based Semi-Supervised Learning with Weight Averaging](www.google.com) which achieves state-of-the-art performance for semi-supervised learning on CIFAR-10 and CIFAR-100. Our model improves the model weights of consistency-enforcing semi-superivised methods, in particular, the [Mean Teacher](https://arxiv.org/abs/1703.01780) model (Tarvainen and Valpola, NIPS 2017) and the [Pi](https://arxiv.org/abs/1610.02242) Model (Laine and Aila, ICLR 2017).
+
+
+The BibTeX entry for the paper is:
+```bibtex
+@article{athi_multift_2018,
+    author = {Ben Athiwaratkun, Marc Finzi, Pavel Izmailov, and Andrew Gordon Wilson},
+    title = {Improving Consistency-Based Semi-Supervised Learning with Weight Averaging},
+    booktitle = {Arxiv},
+    year = {2018}
+}
+```
+
 ## Preparing Packages and Data
 
 The code runs on Python 3 with Pytorch 0.3. The following packages are also required.
