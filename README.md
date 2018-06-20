@@ -5,11 +5,11 @@ This repository contains the code for our paper [Improving Consistency-Based Sem
 
 The BibTeX entry for the paper is:
 ```bibtex
-@article{athi_multift_2018,
-    author = {Ben Athiwaratkun, Marc Finzi, Pavel Izmailov, and Andrew Gordon Wilson},
-    title = {Improving Consistency-Based Semi-Supervised Learning with Weight Averaging},
-    booktitle = {Arxiv},
-    year = {2018}
+@article{athiwaratkun2018improving,
+  title={Improving Consistency-Based Semi-Supervised Learning with Weight Averaging},
+  author={Athiwaratkun, Ben and Finzi, Marc and Izmailov, Pavel and Wilson, Andrew Gordon},
+  journal={arXiv preprint arXiv:1806.05594},
+  year={2018}
 }
 ```
 
