@@ -1,6 +1,6 @@
 # Improving Consistency-Based Semi-Supervised Learning with Weight Averaging 
 
-This repository contains the code for our paper [Improving Consistency-Based Semi-Supervised Learning with Weight Averaging](https://arxiv.org/abs/1806.05594) which achieves the best known performance for semi-supervised learning on CIFAR-10 and CIFAR-100. Our method improves the model weights of consistency-enforcing semi-superivised methods, in particular, the [Mean Teacher](https://arxiv.org/abs/1703.01780) model (Tarvainen and Valpola, NIPS 2017) and the [Pi](https://arxiv.org/abs/1610.02242) Model (Laine and Aila, ICLR 2017), using [stochastic weight averaging](https://arxiv.org/abs/1803.05407) (SWA) and our proposed variant **fast-SWA** which achieves faster reduction in prediction errors.
+This repository contains the code for our paper [Improving Consistency-Based Semi-Supervised Learning with Weight Averaging](https://arxiv.org/abs/1806.05594) which achieves the best known performance for semi-supervised learning on CIFAR-10 and CIFAR-100. By analyzing the geometry of training objectives involving consistency regularization, we can significantly improve the [Mean Teacher](https://arxiv.org/abs/1703.01780) model (Tarvainen and Valpola, NIPS 2017) and the [Pi](https://arxiv.org/abs/1610.02242) Model (Laine and Aila, ICLR 2017), using [stochastic weight averaging](https://arxiv.org/abs/1803.05407) (SWA) and our proposed variant **fast-SWA** which achieves faster reduction in prediction errors.
 
 
 The BibTeX entry for the paper is:
