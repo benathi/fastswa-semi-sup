@@ -1,15 +1,15 @@
-# Improving Consistency-Based Semi-Supervised Learning with Weight Averaging 
+# There Are Many Consistent Explanations of Unlabeled Data: Why You Should Average
 
-This repository contains the code for our paper [Improving Consistency-Based Semi-Supervised Learning with Weight Averaging](https://arxiv.org/abs/1806.05594), which achieves the best known performance for semi-supervised learning on CIFAR-10 and CIFAR-100. By analyzing the geometry of training objectives involving consistency regularization, we can significantly improve the [Mean Teacher](https://arxiv.org/abs/1703.01780) model (Tarvainen and Valpola, NIPS 2017) and the [Pi](https://arxiv.org/abs/1610.02242) Model (Laine and Aila, ICLR 2017), using [stochastic weight averaging](https://arxiv.org/abs/1803.05407) (SWA) and our proposed variant **fast-SWA** which achieves faster reduction in prediction errors.
+This repository contains the code for our paper [There Are Many Consistent Explanations of Unlabeled Data: Why You Should Average](https://openreview.net/pdf?id=rkgKBhA5Y7), which achieves the best known performance for semi-supervised learning on CIFAR-10 and CIFAR-100. By analyzing the geometry of training objectives involving consistency regularization, we can significantly improve the [Mean Teacher](https://arxiv.org/abs/1703.01780) model (Tarvainen and Valpola, NIPS 2017) and the [Pi](https://arxiv.org/abs/1610.02242) Model (Laine and Aila, ICLR 2017), using [stochastic weight averaging](https://arxiv.org/abs/1803.05407) (SWA) and our proposed variant **fast-SWA** which achieves faster reduction in prediction errors.
 
 
 The BibTeX entry for the paper is:
 ```bibtex
 @article{athiwaratkun2018improving,
-  title={Improving Consistency-Based Semi-Supervised Learning with Weight Averaging},
+  title={There Are Many Consistent Explanations of Unlabeled Data: Why You Should Average},
   author={Athiwaratkun, Ben and Finzi, Marc and Izmailov, Pavel and Wilson, Andrew Gordon},
-  journal={arXiv preprint arXiv:1806.05594},
-  year={2018}
+  journal={ICLR},
+  year={2019}
 }
 ```
 
